@@ -15,8 +15,11 @@ public class Destroyer extends Ship{
 	 * Constructs a new Destroyer for the current game.
 	 */
 	public Destroyer() {
-		// TODO Auto-generated constructor stub
+		// Sets the length of this ship which identifies the ship type.
 		length = 2;
+		for(int i = 0; i < hit.length; i++) {
+			hit[i] = false;
+		}
 	}
 
 	/* (non-Javadoc)
@@ -24,7 +27,6 @@ public class Destroyer extends Ship{
 	 */
 	@Override
 	String getShipType() {
-		// TODO Auto-generated method stub
 		return "destroyer";
 	}
 

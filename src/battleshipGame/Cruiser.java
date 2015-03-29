@@ -15,9 +15,12 @@ public class Cruiser extends Ship{
 	 * Constructs a new Cruiser for the current game.
 	 */
 	public Cruiser() {
-		// TODO Auto-generated constructor stub
+		// Sets the length of this ship which identifies the ship type.
 		length = 3;
-	}
+		for(int i = 0; i < hit.length; i++) {
+			hit[i] = false;
+		}
+	}//end of Cruiser constructor method.
 
 	/* (non-Javadoc)
 	 * @see battleshipGame.Ship#getShipType()
@@ -26,7 +29,7 @@ public class Cruiser extends Ship{
 	String getShipType() {
 		// TODO Auto-generated method stub
 		return "cruiser";
-	}
+	}//end of getShipType method.
 
 	/* (non-Javadoc)
 	 * @see java.lang.Object#toString()
@@ -35,9 +38,6 @@ public class Cruiser extends Ship{
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
-	}
-	
-	
-	
+	}//end of toString method.
 
 }

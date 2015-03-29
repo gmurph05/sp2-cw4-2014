@@ -12,11 +12,14 @@ package battleshipGame;
 public class Submarine extends Ship {
 
 	/**
-	 * 
+	 * Constructs a new Submarine for the current game.
 	 */
 	public Submarine() {
-		// TODO Auto-generated constructor stub
+		// Sets the length of this ship which identifies the ship type.
 		length = 1;
+		for(int i = 0; i < hit.length; i++) {
+			hit[i] = false;
+		}
 	}
 
 	/* (non-Javadoc)

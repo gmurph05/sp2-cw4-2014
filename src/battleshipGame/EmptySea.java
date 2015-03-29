@@ -15,7 +15,8 @@ public class EmptySea extends Ship{
 	 * Constructs a new EmptySea location for the current game.
 	 */
 	public EmptySea() {
-		// TODO Auto-generated constructor stub
+		// Sets the length of this ship which identifies the ship type.
+		// In this case, the zero length ship type represents the sea
 		length = 0;
 	}
 
@@ -37,8 +38,8 @@ public class EmptySea extends Ship{
 	 */
 	@Override
 	boolean isSunk() {
-		// TODO Auto-generated method stub
-		return super.isSunk();
+		// always returns false for EmptySea 'Ship'.
+				return false;
 	}
 
 	/* (non-Javadoc)
@@ -48,8 +49,9 @@ public class EmptySea extends Ship{
 	 */
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		// the EmptySea 'ship' location only displays "."
+		String result = ".";
+		return result;
 	}
 	
 	
