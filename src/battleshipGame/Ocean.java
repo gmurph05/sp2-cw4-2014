@@ -9,6 +9,7 @@ import java.util.Random;
  * @author  Gary Murphy
  * @version 1.0
  * @since   2014-12-14
+ * @date	2015-03-29
  */
 
 public class Ocean {
@@ -145,23 +146,26 @@ public class Ocean {
 	 */
 	void placeAllShipsRandomly(){
 		
-		Random random = new Random();
-		int row, col;
-
 		for(int i = 0; i < shipsToPlace[i].length; i++){
-			for(int j = 0; j < shipsToPlace[i].length; j++){
-				row = random.nextInt(10);
-				col = random.nextInt(10);
-				if(!isOccupied(i,j)){
-					ships[i][j] = shipsToPlace[i].getBowColumn();
-				}else{
-					
-				}//end of if conditional statement
-			}//end of inner for loop (columns)
-		}//end of outer for loop (rows)	
+			placeShip(shipsToPlace[i]);
+		}//end of for loop	
 	}//end of placeAllShipsRandomly method
 	
-	
+	 private void placeShip(Ship ship) {
+	        boolean shipIsPlaced = false;
+	        while (!shipIsPlaced) {
+
+	            int row = new Random().nextInt(10);
+	            int column = new Random().nextInt(10);
+	            boolean horizontal = new Random().nextBoolean();
+
+	            if (ship.okToPlaceShipAt(row, column, horizontal, this)) {
+	                ship.placeShipAt(row, column, horizontal, this);
+	                shipIsPlaced = true;
+	            }
+	        }
+	    }
+	 
 	/**
 	 * Checks to see if given location contains a ship.
 	 * @param row
